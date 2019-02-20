@@ -6,8 +6,9 @@
     "url": "https://github.com/cornflourblue/angular2-registration-login-example-webpack.git"
   },
   "scripts": {
-    "start": "webpack-dev-server --inline --progress --port 8080",
-    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
+    "start": "node server.js",
+    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "postinstall": "ng build --aot -prod"
   },
   "license": "MIT",
   "dependencies": {
@@ -19,14 +20,19 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
     "core-js": "^2.4.1",
+    "express": "^4.16.4",
+    "path": "^0.12.7",
     "rxjs": "^5.2.0",
     "zone.js": "^0.8.5"
   },
   "devDependencies": {
+    "@angular/cli": "^7.3.2",
+    "@angular/compiler-cli": "^7.2.5",
     "@types/node": "^6.0.60",
     "angular2-template-loader": "^0.6.0",
     "awesome-typescript-loader": "^3.0.4",
     "css-loader": "^0.26.1",
+    "enhanced-resolve": "^3.3.0",
     "extract-text-webpack-plugin": "2.0.0-beta.5",
     "file-loader": "^0.9.0",
     "html-loader": "^0.4.3",
